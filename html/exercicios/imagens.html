@@ -1,0 +1,111 @@
+<div wm-slider>
+
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="Muro da Cidade" width="513" height="342"
+            title="Muro da Cidade por Tarso Bassa">
+    </p>
+
+    <p>
+        <img src="https://media2.giphy.com/media/l3V0mnnGcVblF8bAI/giphy.gif?cid=ecf05e479vvfn3jgrwui1qcso1c86n71djafzhrs6z5h9qq3&rid=giphy.gif&ct=g"
+            alt="Intro Cod3r" height="342">
+    </p>
+
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="Rio de Janeiro" height="342">
+
+    </p>
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" height="50" align="left">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non volutpat dolor, vitae egestas ipsum. Ut
+        semper
+        suscipit massa. Vivamus ornare lectus sit amet ipsum vehicula bibendum. Suspendisse ut nulla sem. Donec lacinia
+        nunc
+        purus, nec dignissim magna fringilla ut. Sed egestas ligula ante, id mollis ipsum ornare in. Fusce sagittis arcu
+        eget augue efficitur euismod. Donec ornare quam eros, eget elementum libero faucibus id.
+    </p>
+
+    <p class="cidade"></p>
+
+    <!-- <p>
+        <picture class="lobin">
+            <source srcset="http://www.fundosanimais.com/Imagens/imagens-lobos.jpg" media="(min-width: 600px)" >
+            <img src="https://www.designerd.com.br/wp-content/uploads/2019/04/imagens-blogs-chamar-atencao-publico-3.jpg" alt="">
+        </picture>
+    </p> -->
+</div>
+
+<style>
+    .lobin {
+        width: 700px;
+        height: 400px;
+    }
+    p {
+        position: absolute;
+        display: none;
+    }
+    .circular {
+        width: 513px;
+        background-color: #444;
+    }
+
+    .texto {
+        width: 400px;
+    }
+
+    .texto img {
+        margin-right: 10px;
+    }
+
+    .cidade {
+        width: 513px;
+        height: 342px;
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
+
+<script>
+    function mover(elem, inicio, fim, passo, callback) {
+        const novoInicio = inicio - passo
+        if(novoInicio >= fim) {
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+        } else {
+            callback()
+        }
+    }
+
+    // const p = document.querySelector('[wm-slider] > p')
+    // p.style.display = 'block'
+    // mover(p, 1500, -520, 5, () => {
+    //     console.log('Terminou!!!')
+    // })
+    function slider() {
+        const elementos = document.querySelectorAll('p')
+        const slides = Array.from(elementos)
+        exibirSlide(slides, slides[1])
+    }
+
+    function exibirSlide(slides, slide) {
+        slide.style.display = 'block'
+
+        const inicio = 2000
+        const fim = -500
+
+        slide.style.left = `${inicio}px`
+
+        mover(slide, inicio, fim, 5, () => {
+            // slide.style.display = 'none'
+            exibirSlide(slides, getProximo(slides, slide))
+        })
+    }
+
+    function getProximo(lista, atual) {
+        const i = lista.indexOf(atual) + 2
+        return i < lista.lenght ? lista[i] : lista[1]
+        
+    }
+
+    slider()
+</script>
