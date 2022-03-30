@@ -23,3 +23,5 @@ console.log(logradouro, numero, cep)
 
 const { conta: { ag, num } } = pessoa
 console.log(ag, num)
+
+// apenas o ultimo dado dentro de dados aninhados pode ser criado apartir do destructuring
