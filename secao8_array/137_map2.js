@@ -5,7 +5,7 @@ const carrinho = [
   '{ "nome": "Caneta", "preco": 7.50 }',
 ]
 
-const paraObj = (json) => JSON.parse(carrinho);
+const paraObj = json => JSON.parse(json);
 console.log(paraObj);
 const apenasPreco = (produto) => produto.preco;
 console.log(apenasPreco);

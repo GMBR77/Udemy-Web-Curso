@@ -10,8 +10,12 @@ const arrayDePalavras = ["programação", "mobile", "profissional"]
 
 function buscarPalavrasSemelhantes(palavra, arrayDePalavras) {
     return arrayDePalavras.filter(function(el) {
-        return el.toLowerCase().indexOf(palavra.toLowerCase()) > -1
+        console.log(el);
+        const resp = el.toLowerCase().indexOf(palavra.toLowerCase())
+        console.log(resp);
+        // return el.toLowerCase().indexOf(palavra.toLowerCase()) > -1
+
     })
 }
 
-console.log(buscarPalavrasSemelhantes("il", ["programação", "mobile", "profissional"]));
+console.log(buscarPalavrasSemelhantes("pro", ["programação", "mobile projeto", "profissional"]));

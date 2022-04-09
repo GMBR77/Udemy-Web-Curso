@@ -1,0 +1,8 @@
+node é quem realmente executa os codigos em javascript
+npm (node packge manager) é um gerenciador dos pacotes do node
+
+
+npm i 'nome da dependecia'          === instalar modulos de terceiros
+npm init                            === criar o arquivo packge.json na pasta
+npm i --save 'nome da dependecia'   === instala o modulo e cria uma area de dependecia no packge.json
+npm i --save--dev axios(nomeDependecia)@0.17.1(versao) -E(exatamente a versao)
