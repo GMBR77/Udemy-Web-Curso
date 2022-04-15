@@ -17,11 +17,8 @@
     <p class="texto">
         <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" height="50" align="left">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non volutpat dolor, vitae egestas ipsum. Ut
+        semperLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non volutpat dolor, vitae egestas ipsum. Ut
         semper
-        suscipit massa. Vivamus ornare lectus sit amet ipsum vehicula bibendum. Suspendisse ut nulla sem. Donec lacinia
-        nunc
-        purus, nec dignissim magna fringilla ut. Sed egestas ligula ante, id mollis ipsum ornare in. Fusce sagittis arcu
-        eget augue efficitur euismod. Donec ornare quam eros, eget elementum libero faucibus id.
     </p>
 
     <p class="cidade"></p>
@@ -82,16 +79,16 @@
     //     console.log('Terminou!!!')
     // })
     function slider() {
-        const elementos = document.querySelectorAll('p')
+        const elementos = document.querySelectorAll('[wm-slider] > p')
         const slides = Array.from(elementos)
-        exibirSlide(slides, slides[1])
+        exibirSlide(slides, slides[0])
     }
 
     function exibirSlide(slides, slide) {
         slide.style.display = 'block'
 
-        const inicio = 2000
-        const fim = -500
+        const inicio = innerWidth
+        const fim = -slide.clientWidth
 
         slide.style.left = `${inicio}px`
 
@@ -102,10 +99,12 @@
     }
 
     function getProximo(lista, atual) {
-        const i = lista.indexOf(atual) + 2
-        return i < lista.lenght ? lista[i] : lista[1]
+        const i = lista.indexOf(atual) + 1
+        return i < lista.length ? lista[i] : lista[0]
         
     }
 
     slider()
 </script>
+
+<!-- revisado 14/04/2022 -->

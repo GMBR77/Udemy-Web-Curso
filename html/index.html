@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,13 +12,14 @@
         }
     </style>
 </head>
+
 <body>
     <header>
-        <h1>Exercicios HTML</h1>
+        <h1>Exercícios HTML</h1>
     </header>
     <nav>
-        <a href wm-nav="exercicios/teste.html">00 - Teste</a> | 
-        <a href wm-nav="exercicios/texto1.html">01 - Texto1</a> | 
+        <a href wm-nav="exercicios/teste.html">00 - Teste</a> |
+        <a href wm-nav="exercicios/texto1.html">01 - Texto1</a> |
         <a href wm-nav="exercicios/texto2.html">02 - Texto2</a> |
         <a href wm-nav="exercicios/listas.html">03 - Listas</a> |
         <a href wm-nav="exercicios/listaAninhada.html">04 - Listas Aninhadas</a> |
@@ -36,14 +38,17 @@
     <script>
         document.querySelectorAll('[wm-nav]').forEach(link => {
             const conteudo = document.getElementById('conteudo')
-            link.onclick = function(e) {
-                e.preventDefault()
+            link.onclick = function (e) {
+                e.preventDefault() // previne comportamento padrao ocorra
 
-                fetch(link.getAttribute('wm-nav'))
+                fetch(link.getAttribute('wm-nav')) // requisição ajax
                     .then(resp => resp.text())
                     .then(html => conteudo.innerHTML = html)
             }
         })
     </script>
 </body>
+
 </html>
+
+<!-- revisado 14/04/2022 -->

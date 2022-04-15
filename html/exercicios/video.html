@@ -3,8 +3,8 @@
     allowfullscreen></iframe> -->
 
 <video id="meuVideo" width="800" height="450" controls autoplay controlsList="nodownload">
-    <source src="/html/_video/pexels-ron-lach-7856705.mp4" type="video/mp4">
-    <!-- <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4"> -->
+    <!-- <source src="/html/_video/pexels-ron-lach-7856705.mp4" type="video/mp4"> -->
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
 </video>
 
 <div wm-progresso="meuVideo" class="progresso">
@@ -48,7 +48,7 @@
             valorDiv.style.width = `${percentual}%`
             valorDiv.innerHTML = `${percentual.toFixed(1)}%`
             // valorDiv.innerHTML.style.text-align = `center`
-        }, 500)
+        }, 50)
     }
     configurarVideo('meuVideo')
 </script>
