@@ -5,14 +5,46 @@
     <meta charset="UTF-8">
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
-    <style>
-        /* [feira=casa] */      
+    <style>       
+        /* p */
+        /* /\ selecionando por tag */
+        
+        /* .tag */
+        /* /\ selecionando por classe */
+        
+        /* #aprovados */
+        /* /\ selecionando por ID */
+        
+        /* #aninhado > div */
+        /* /\ selecionando filho por ID */
+        
+        /* #aninhado section */
+        /* /\ selecionando um elemento que esteja dentro do ID independente do parentesco */
+        
+        /* p + ul */
+        /* /\ selecionando uma tag adjacente a primeira tag */
+        
+        /* p ~ ol */
+        /* /\ selecionando uma tag que seja irmao a primeira tag */
+        
+        /* [feira=casa]       */
+        /* /\ selecionando um elemento pelo seu atributo e valor*/
+        
         /* [feira*=sa], */
+        /* /\ selecionando um elemento pelo seu atributo contendo 'sa'*/
+        
         /* span:nth-child(1) */
+        /* /\ selecionando um elemento sendo filho da tag span*/
+        
         /* section > :nth-child(odd) */
+        /* /\ selecionando um elemento sendo filho e sendo impar*/
+        
         /* section > :nth-child(even) label */
-        /* section > span:nth-of-type(2) */
-        p
+        /* /\ selecionando um elemento sendo filho e sendo par e */
+        
+        section > span:nth-of-type(2)
+        /* /\ selecionando o segundo elemento do tipo spam dentro da section */
+        
         {
             color: yellow;
             background-color: rgb(211, 63, 149);
