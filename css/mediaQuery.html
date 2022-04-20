@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <title>Media Query</title>
     <style>
+        body {
+            background-color: #333;
+            color: #ccc;
+        }
         div {
             font-size: 40px;
             margin: 20px;
             padding: 20px;
-            background-color: coral;
+            background-color: rgb(81, 34, 18);
             border: solid 5px;
             display: none;
+        }
+
+        @media (max-width: 600px) {
+            .muito-pequeno {display: block;}
+        }
+
+        @media (max-width: 1000px), (orientation: portrait) {
+            .pequeno-retrato {display: block;}
+        }
+
+        @media (min-width: 500px) and (max-Width: 1000px) {
+            .intervalo {display: block;}
         }
     </style>
 </head>
