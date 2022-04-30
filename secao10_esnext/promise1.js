@@ -1,5 +1,5 @@
 // promise so opera com 1 unico valor
-// para mais valores vc pode um obejto ou array
+// para mais valores vc pode usar um objeto ou array
 
 
 const primeiroElemento = array => array[0]
